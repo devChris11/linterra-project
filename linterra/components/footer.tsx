@@ -50,7 +50,7 @@ export function Footer() {
           </div>
 
           <Link href="/demo">
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg shadow-primary/20">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg shadow-primary/20 btn-shine">
               Try Demo
             </Button>
           </Link>

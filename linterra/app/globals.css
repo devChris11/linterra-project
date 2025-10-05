@@ -122,3 +122,42 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Button shine effect */
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(30deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(30deg);
+  }
+}
+
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1) 30%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 70%,
+    transparent
+  );
+  filter: blur(20px);
+  transform: translateX(-100%) translateY(-100%) rotate(30deg);
+  transition: transform 1s ease;
+}
+
+.btn-shine:hover::before {
+  animation: shine 1s ease;
+}
