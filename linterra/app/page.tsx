@@ -6,6 +6,7 @@ import { FeaturesSection } from "@/components/features-section"
 import { HowItWorksSection } from "@/components/how-it-works-section"
 import { FeatureExampleSection } from "@/components/feature-example-section"
 import { CTASection } from "@/components/cta-section"
+import { CursorGlow } from "@/components/cursor-glow"
 
 export default function LandingPage() {
   return (
@@ -20,6 +21,7 @@ export default function LandingPage() {
       </main>
       <Footer />
       <ScrollToTop />
+      <CursorGlow />
     </div>
   )
 }

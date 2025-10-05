@@ -27,7 +27,7 @@ export function CTASection() {
         <Link href="/demo">
           <Button
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg px-12 py-6 shadow-lg shadow-primary/20"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg px-12 py-6 shadow-lg shadow-primary/20 btn-shine"
           >
             Try Demo Now
           </Button>
