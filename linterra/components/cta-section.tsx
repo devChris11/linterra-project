@@ -15,19 +15,19 @@ export function CTASection() {
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.6 }}
-        className="bg-gradient-to-r from-[#21C759]/10 to-[#1DC7A8]/10 border border-[#21C759]/30 rounded-2xl p-12 md:p-16 text-center"
+        className="bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/30 rounded-2xl p-12 md:p-16 text-center"
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-[#FEFEFE] mb-6 text-balance">
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
           Ready to Lorem Ipsum Your Code?
         </h2>
-        <p className="text-lg text-[#FEFEFE]/70 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua.
         </p>
         <Link href="/demo">
           <Button
             size="lg"
-            className="bg-[#21C759] text-[#FEFEFE] hover:bg-[#21C759]/90 font-semibold text-lg px-12 py-6 shadow-lg shadow-[#21C759]/20"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg px-12 py-6 shadow-lg shadow-primary/20"
           >
             Try Demo Now
           </Button>

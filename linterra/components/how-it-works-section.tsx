@@ -38,8 +38,8 @@ export function HowItWorksSection() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-[#FEFEFE] mb-4">How It Works</h2>
-        <p className="text-lg text-[#FEFEFE]/70 max-w-2xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">How It Works</h2>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
         </p>
       </motion.div>
@@ -96,17 +96,17 @@ function StepCard({ step, index }: { step: (typeof steps)[0]; index: number }) {
       transition={{ duration: 0.5, delay: index * 0.15 }}
       whileHover={{ x: 8, transition: { duration: 0.3 } }}
     >
-      <Card className="bg-[#2A2A2A] border-[#3A3A3A] hover:border-[#1DC7A8] transition-all duration-300 group">
+      <Card className="bg-card border-border hover:border-secondary transition-all duration-300 group">
         <CardContent className="p-6">
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0">
-              <span className="text-5xl font-bold text-[#1DC7A8] group-hover:text-[#21C759] transition-colors">
+              <span className="text-5xl font-bold text-secondary group-hover:text-primary transition-colors">
                 {step.number}
               </span>
             </div>
             <div className="flex-1">
-              <h3 className="text-2xl font-bold text-[#FEFEFE] mb-3">{step.title}</h3>
-              <p className="text-[#FEFEFE]/70 leading-relaxed">{step.description}</p>
+              <h3 className="text-2xl font-bold text-card-foreground mb-3">{step.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{step.description}</p>
             </div>
           </div>
         </CardContent>

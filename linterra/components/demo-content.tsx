@@ -37,31 +37,31 @@ export function DemoContent() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-4">
             <Select value={language} onValueChange={setLanguage}>
-              <SelectTrigger className="w-[200px] bg-[#2A2A2A] border-[#3A3A3A] text-[#FEFEFE]">
+              <SelectTrigger className="w-[200px] bg-card border-border text-card-foreground">
                 <SelectValue placeholder="Select language" />
               </SelectTrigger>
-              <SelectContent className="bg-[#2A2A2A] border-[#3A3A3A]">
-                <SelectItem value="javascript" className="text-[#FEFEFE] focus:bg-[#3A3A3A] focus:text-[#FEFEFE]">
+              <SelectContent className="bg-popover border-border">
+                <SelectItem value="javascript" className="text-popover-foreground focus:bg-accent focus:text-accent-foreground">
                   JavaScript
                 </SelectItem>
-                <SelectItem value="typescript" className="text-[#FEFEFE] focus:bg-[#3A3A3A] focus:text-[#FEFEFE]">
+                <SelectItem value="typescript" className="text-popover-foreground focus:bg-accent focus:text-accent-foreground">
                   TypeScript
                 </SelectItem>
-                <SelectItem value="python" className="text-[#FEFEFE] focus:bg-[#3A3A3A] focus:text-[#FEFEFE]">
+                <SelectItem value="python" className="text-popover-foreground focus:bg-accent focus:text-accent-foreground">
                   Python
                 </SelectItem>
               </SelectContent>
             </Select>
           </div>
 
-          <div className="flex-1 border border-[#3A3A3A] rounded-lg overflow-hidden">
+          <div className="flex-1 border border-border rounded-lg overflow-hidden">
             <CodeEditor language={language} value={code} onChange={setCode} />
           </div>
 
           <Button
             onClick={handleCheckCode}
             disabled={isChecking || !code}
-            className="bg-[#21C759] text-[#FEFEFE] hover:bg-[#21C759]/90 font-semibold"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
           >
             {isChecking ? "Checking..." : "Check Code"}
           </Button>

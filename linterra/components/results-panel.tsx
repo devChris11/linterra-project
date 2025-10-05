@@ -11,12 +11,12 @@ interface ResultsPanelProps {
 export function ResultsPanel({ results }: ResultsPanelProps) {
   if (!results) {
     return (
-      <Card className="bg-[#2A2A2A] border-[#3A3A3A] h-full flex items-center justify-center">
+      <Card className="bg-card border-border h-full flex items-center justify-center">
         <CardContent className="flex flex-col items-center justify-center gap-4 p-12 text-center">
-          <FileCode className="w-16 h-16 text-[#3A3A3A]" />
+          <FileCode className="w-16 h-16 text-muted-foreground" />
           <div>
-            <h3 className="text-xl font-semibold text-[#FEFEFE] mb-2">No Results Yet</h3>
-            <p className="text-[#FEFEFE]/60">
+            <h3 className="text-xl font-semibold text-card-foreground mb-2">No Results Yet</h3>
+            <p className="text-muted-foreground">
               Write some code in the editor and click "Check Code" to see the linting results.
             </p>
           </div>
@@ -35,26 +35,26 @@ export function ResultsPanel({ results }: ResultsPanelProps) {
         transition={{ duration: 0.3 }}
         className="h-full"
       >
-        <Card className="bg-[#2A2A2A] border-[#3A3A3A] h-full flex flex-col">
+        <Card className="bg-card border-border h-full flex flex-col">
           <CardContent className="p-6 flex-1 overflow-auto">
             <div className="mb-6">
-              <h3 className="text-2xl font-bold text-[#FEFEFE] mb-4">Results</h3>
+              <h3 className="text-2xl font-bold text-card-foreground mb-4">Results</h3>
 
               {/* Summary */}
               <div className="flex gap-4 mb-6">
                 <div className="flex items-center gap-2 px-4 py-2 bg-red-500/10 border border-red-500/30 rounded-lg">
                   <AlertCircle className="w-5 h-5 text-red-500" />
-                  <span className="text-[#FEFEFE] font-semibold">{results.summary.errors} Errors</span>
+                  <span className="text-card-foreground font-semibold">{results.summary.errors} Errors</span>
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
                   <AlertCircle className="w-5 h-5 text-yellow-500" />
-                  <span className="text-[#FEFEFE] font-semibold">{results.summary.warnings} Warnings</span>
+                  <span className="text-card-foreground font-semibold">{results.summary.warnings} Warnings</span>
                 </div>
               </div>
 
               {/* Violations */}
               <div className="space-y-3">
-                <h4 className="text-lg font-semibold text-[#FEFEFE] mb-3">Violations</h4>
+                <h4 className="text-lg font-semibold text-card-foreground mb-3">Violations</h4>
                 {results.violations.map((violation: any, index: number) => (
                   <motion.div
                     key={index}
@@ -75,7 +75,7 @@ export function ResultsPanel({ results }: ResultsPanelProps) {
                       />
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="text-[#1DC7A8] font-mono text-sm">Line {violation.line}</span>
+                          <span className="text-secondary font-mono text-sm">Line {violation.line}</span>
                           <span
                             className={`text-xs px-2 py-0.5 rounded ${
                               violation.severity === "error"
@@ -86,7 +86,7 @@ export function ResultsPanel({ results }: ResultsPanelProps) {
                             {violation.severity}
                           </span>
                         </div>
-                        <p className="text-[#FEFEFE]/80 text-sm">{violation.message}</p>
+                        <p className="text-muted-foreground text-sm">{violation.message}</p>
                       </div>
                     </div>
                   </motion.div>

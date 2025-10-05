@@ -17,10 +17,10 @@ export function HeroSection() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-start"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#FEFEFE] mb-6 leading-tight text-balance">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight text-balance">
             Lorem ipsum dolor sit amet consectetur
           </h1>
-          <p className="text-lg md:text-xl text-[#FEFEFE]/80 mb-8 leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua.
           </p>
@@ -29,7 +29,7 @@ export function HeroSection() {
             <Link href="/demo">
               <Button
                 size="lg"
-                className="bg-[#21C759] text-[#FEFEFE] hover:bg-[#21C759]/90 font-semibold text-lg px-8 py-6 shadow-lg shadow-[#21C759]/20"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg px-8 py-6 shadow-lg shadow-primary/20"
               >
                 Try Demo
               </Button>
@@ -38,7 +38,7 @@ export function HeroSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-[#1DC7A8] text-[#1DC7A8] hover:bg-[#1DC7A8]/10 font-semibold text-lg px-8 py-6 bg-transparent"
+                className="border-2 border-secondary text-secondary hover:bg-secondary/10 font-semibold text-lg px-8 py-6 bg-transparent"
               >
                 <Github className="w-5 h-5 mr-2" />
                 View on Github

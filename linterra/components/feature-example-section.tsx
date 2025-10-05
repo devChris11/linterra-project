@@ -42,8 +42,8 @@ export function FeatureExampleSection() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-[#FEFEFE] mb-4">See It In Action</h2>
-        <p className="text-lg text-[#FEFEFE]/70 max-w-2xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">See It In Action</h2>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
         </p>
       </motion.div>
@@ -69,31 +69,31 @@ function ExampleCard({ example, index }: { example: (typeof examples)[0]; index:
       transition={{ duration: 0.6, delay: index * 0.2 }}
       className="flex flex-col gap-4"
     >
-      <h3 className="text-2xl font-bold text-[#FEFEFE]">{example.title}</h3>
+      <h3 className="text-2xl font-bold text-foreground">{example.title}</h3>
 
       {/* Code snippet */}
-      <Card className="bg-[#1A1A1A] border-[#3A3A3A] overflow-hidden">
+      <Card className="bg-background border-border overflow-hidden">
         <CardContent className="p-0">
           <pre className="p-6 overflow-x-auto">
-            <code className="text-sm text-[#FEFEFE] font-mono leading-relaxed">{example.code}</code>
+            <code className="text-sm text-foreground font-mono leading-relaxed">{example.code}</code>
           </pre>
         </CardContent>
       </Card>
 
       {/* Violations card */}
-      <Card className="bg-[#2A2A2A] border-[#3A3A3A]">
+      <Card className="bg-card border-border">
         <CardContent className="p-6">
           <div className="flex items-center gap-2 mb-4">
-            <AlertCircle className="w-5 h-5 text-[#21C759]" />
-            <h4 className="text-lg font-semibold text-[#FEFEFE]">Violations</h4>
+            <AlertCircle className="w-5 h-5 text-primary" />
+            <h4 className="text-lg font-semibold text-card-foreground">Violations</h4>
           </div>
           <div className="space-y-2">
             {example.violations.map((violation, idx) => (
               <div
                 key={idx}
-                className={`text-sm ${violation.line === 0 ? "text-[#21C759]" : "text-[#FEFEFE]/70"} flex gap-2`}
+                className={`text-sm ${violation.line === 0 ? "text-primary" : "text-muted-foreground"} flex gap-2`}
               >
-                {violation.line > 0 && <span className="text-[#1DC7A8] font-mono">Line {violation.line}:</span>}
+                {violation.line > 0 && <span className="text-secondary font-mono">Line {violation.line}:</span>}
                 <span>{violation.message}</span>
               </div>
             ))}
