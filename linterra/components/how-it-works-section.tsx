@@ -3,26 +3,27 @@
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import Image from "next/image"
 
 const steps = [
   {
     number: "01",
-    title: "Lorem Ipsum Setup",
+    title: "Install GitHub Action",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Add our workflow file to .github/workflows/. Takes 30 seconds.",
   },
   {
     number: "02",
-    title: "Consectetur Analysis",
+    title: "Open a Pull Request",
     description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Make changes to your components. Open a PR. The checker runs automatically.",
   },
   {
     number: "03",
-    title: "Tempor Results",
+    title: "Get Instant Feedback",
     description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "Violations appear as PR comments with line numbers, severity levels, and suggestions to fix. Merge with confidence.  ",
   },
 ]
 
@@ -40,7 +41,7 @@ export function HowItWorksSection() {
       >
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">How It Works</h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+          Three simple steps. One workflow file. Automatic enforcement on every pull request
         </p>
       </motion.div>
 
@@ -61,14 +62,14 @@ export function HowItWorksSection() {
               repeat: Number.POSITIVE_INFINITY,
               ease: "easeInOut",
             }}
-            className="w-full max-w-md relative"
+            className="w-full max-w-3xl relative"
           >
-            <Image
-              src="/abstract-tech-process-flow-with-neon-cyan-accents.jpg"
-              alt="Process illustration"
-              width={400}
-              height={400}
-              className="w-full h-auto"
+            <DotLottieReact
+              src="https://lottie.host/63c7c6a7-49ac-4ba0-9ec4-9958559d0f30/wUkEWDZ2TF.lottie"
+              height={500}
+              width={600}
+              loop
+              autoplay
             />
           </motion.div>
         </motion.div>

@@ -3,24 +3,24 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { Zap, Shield, Code } from "lucide-react"
+import { Zap, Shield, Code, Eye, Cog } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
 const features = [
   {
     icon: Zap,
-    title: "Lorem Ipsum Dolor",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
+    title: "Automated Checking",
+    description: "Runs on every pull request automatically. No manual code review needed—violations are caught before merge, with line-by-line feedback and suggested fixes.",
   },
   {
-    icon: Shield,
-    title: "Consectetur Adipiscing",
-    description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
+    icon: Eye,
+    title: "Design System + Accessibility",
+    description: "Goes beyond design tokens—also enforces color contrast ratios and semantic HTML for WCAG compliance. Ship accessible UIs by default.",
   },
   {
-    icon: Code,
-    title: "Tempor Incididunt",
-    description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",
+    icon: Cog,
+    title: "Zero Configuration",
+    description: "Add one GitHub Action file to your repo. That's it. Works with React, Next.js, and TypeScript out of the box. No complex setup or dependencies.",
   },
 ]
 
@@ -36,9 +36,9 @@ export function FeaturesSection() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Lorem Ipsum Features</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Why Design System Checker?</h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+          Automated enforcement that fits into your existing workflow—no process changes required.
         </p>
       </motion.div>
 

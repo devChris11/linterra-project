@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, Instagram, Linkedin, Origami as Prism } from "lucide-react"
+import { Github, Instagram, Linkedin, Pyramid as LogoIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Footer() {
@@ -9,12 +9,12 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex flex-col items-center md:items-start gap-4">
             <Link href="/" className="flex items-center gap-2 group">
-              <Prism className="w-6 h-6 text-primary" />
+              <LogoIcon className="w-6 h-6 text-primary" />
               <span className="text-xl font-bold text-white">Linterra</span>
             </Link>
             <div className="flex flex-col items-center md:items-start gap-2">
               <p className="text-sm text-muted-foreground">
-                Created by <span className="text-foreground font-semibold">Your Name</span>
+                Created by <span className="text-foreground font-semibold">Christo Fernando</span>
               </p>
               <p className="text-xs text-muted-foreground">
                 © {new Date().getFullYear()} Linterra. All rights reserved.
@@ -24,23 +24,23 @@ export function Footer() {
 
           <div className="flex items-center gap-4">
             <Link
-              href="https://linkedin.com"
+              href="www.linkedin.com/in/christo-fernando"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               <Linkedin className="w-5 h-5" />
             </Link>
-            <Link
+            {/*<Link
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               <Instagram className="w-5 h-5" />
-            </Link>
+            </Link>*/}
             <Link
-              href="https://github.com"
+              href="https://github.com/devChris11"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -49,11 +49,14 @@ export function Footer() {
             </Link>
           </div>
 
+          {/*
           <Link href="/demo">
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg shadow-primary/20 btn-shine">
               Try Demo
             </Button>
           </Link>
+          */}
+
         </div>
       </div>
     </footer>
