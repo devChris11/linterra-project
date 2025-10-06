@@ -18,18 +18,17 @@ export function CTASection() {
         className="bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/30 rounded-2xl p-12 md:p-16 text-center"
       >
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
-          Ready to Lorem Ipsum Your Code?
+          Ready to Ship Consistent, Accessible UIs?
         </h2>
         <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.
+          Test your components in our interactive demo. No installation needed.
         </p>
         <Link href="/demo">
           <Button
             size="lg"
             className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg px-12 py-6 shadow-lg shadow-primary/20 btn-shine"
           >
-            Try Demo Now
+            Try The Interactive Demo →
           </Button>
         </Link>
       </motion.div>

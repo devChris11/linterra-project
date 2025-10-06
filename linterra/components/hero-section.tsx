@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Github } from "lucide-react"
+import { Github, Download } from "lucide-react"
 import { motion } from "framer-motion"
 import { DotLottieReact } from "@lottiefiles/dotlottie-react"
 import Image from "next/image"
@@ -18,12 +18,11 @@ export function HeroSection() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-start"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight text-balance">
-            Lorem ipsum dolor sit amet consectetur
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight text-balance">
+          Lint Your Design Tokens. Enforce Accessibility. Ship Consistent UIs.
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
+          Automated linting for React/Next.js components. Catches hardcoded colors, spacing violations, and accessibility issues before code review.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full">
@@ -32,10 +31,10 @@ export function HeroSection() {
                 size="lg"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg px-8 py-6 shadow-lg shadow-primary/20 btn-shine"
               >
-                Try Demo
+                Try Linterra
               </Button>
             </Link>
-            <Link href="https://github.com/placeholder" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/devChris11/linterra-project" target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
                 variant="outline"
@@ -45,6 +44,22 @@ export function HeroSection() {
                 View on Github
               </Button>
             </Link>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-secondary text-secondary hover:bg-secondary/10 font-semibold text-lg px-8 py-6 bg-transparent"
+              onClick={() => {
+                const link = document.createElement('a')
+                link.href = '/linterra.yml'
+                link.download = 'linterra.yml'
+                document.body.appendChild(link)
+                link.click()
+                document.body.removeChild(link)
+              }}
+            >
+              <Download className="w-5 h-5 mr-2" />
+              Download Linterra.yml
+            </Button>
           </div>
         </motion.div>
 
@@ -67,7 +82,7 @@ export function HeroSection() {
             className="w-full max-w-lg relative"
           >
             <DotLottieReact
-              src="https://lottie.host/e059ebbe-8ff2-4350-b3de-d2c3e2a5388c/M6wIaSILuR.lottie"
+              src="https://lottie.host/26905a43-f159-43b2-b074-6a75c4d4fc9b/9eSFCBiejq.lottie"
               height={700}
               width={700}
               loop

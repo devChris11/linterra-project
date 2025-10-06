@@ -4,29 +4,43 @@ import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { AlertCircle } from "lucide-react"
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 const examples = [
   {
-    title: "Before Linting",
-    code: `function example() {
-  var x = 10;
-  console.log(x)
-  return x
+    title: "❌ Before: Design System Violations",
+    code: `export default function Button() {
+  return (
+    <button
+      style={{
+        backgroundColor: '#3B82F6',
+        color: '#FFFFFF',
+        padding: '12px 24px',
+        borderRadius: '8px'
+      }}
+    >
+      Click Me
+    </button>
+  );
 }`,
     violations: [
-      { line: 2, message: "Unexpected var, use let or const instead" },
-      { line: 3, message: "Missing semicolon" },
-      { line: 4, message: "Missing semicolon" },
+      '⚠️  2 hardcoded colors detected',
+      '⚠️  3 hardcoded spacing values'
     ],
   },
   {
-    title: "After Linting",
-    code: `function example() {
-  const x = 10;
-  console.log(x);
-  return x;
+    title: "✅ After: Design System Compliant",
+    code: `export default function Button() {
+  return (
+    <button
+      className="bg-primary text-white px-6 py-3 rounded-lg"
+    >
+      Click Me
+    </button>
+  );
 }`,
-    violations: [{ line: 0, message: "No violations found! ✓" }],
+    violations: ['✓ No violations found!'],
   },
 ]
 
@@ -42,9 +56,9 @@ export function FeatureExampleSection() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">See It In Action</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Before & After</h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+          See how the checker catches violations and suggests design token replacements
         </p>
       </motion.div>
 
@@ -72,11 +86,27 @@ function ExampleCard({ example, index }: { example: (typeof examples)[0]; index:
       <h3 className="text-2xl font-bold text-foreground">{example.title}</h3>
 
       {/* Code snippet */}
-      <Card className="bg-background border-border overflow-hidden">
+      <Card className="bg-[#1e1e1e] border-border overflow-hidden">
         <CardContent className="p-0">
-          <pre className="p-6 overflow-x-auto">
-            <code className="text-sm text-foreground font-mono leading-relaxed">{example.code}</code>
-          </pre>
+          <SyntaxHighlighter
+            language="tsx"
+            style={vscDarkPlus}
+            showLineNumbers={true}
+            customStyle={{
+              margin: 0,
+              borderRadius: '0.5rem',
+              fontSize: '0.875rem',
+              lineHeight: '1.5',
+            }}
+            lineNumberStyle={{
+              minWidth: '3em',
+              paddingRight: '1em',
+              color: '#858585',
+              userSelect: 'none',
+            }}
+          >
+            {example.code}
+          </SyntaxHighlighter>
         </CardContent>
       </Card>
 
@@ -91,10 +121,9 @@ function ExampleCard({ example, index }: { example: (typeof examples)[0]; index:
             {example.violations.map((violation, idx) => (
               <div
                 key={idx}
-                className={`text-sm ${violation.line === 0 ? "text-primary" : "text-muted-foreground"} flex gap-2`}
+                className="text-sm text-muted-foreground"
               >
-                {violation.line > 0 && <span className="text-secondary font-mono">Line {violation.line}:</span>}
-                <span>{violation.message}</span>
+                {violation}
               </div>
             ))}
           </div>
