@@ -1,7 +1,10 @@
-import type { NextConfig } from "next";
 import path from "path";
+import { fileURLToPath } from "url";
 
-const nextConfig: NextConfig = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const nextConfig = {
   webpack: (config, { isServer }) => {
     // Custom inline loader to read raw source files bypassing all transformations
     config.module.rules.unshift({
@@ -9,7 +12,7 @@ const nextConfig: NextConfig = {
       resourceQuery: /raw/,
       use: [
         {
-          loader: path.resolve('./raw-file-loader.js'),
+          loader: path.resolve(__dirname, './raw-file-loader.js'),
         },
       ],
     });
@@ -19,3 +22,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
