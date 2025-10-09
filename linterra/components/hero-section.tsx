@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Github, Download } from "lucide-react"
 import { motion } from "framer-motion"
 import { DotLottieReact } from "@lottiefiles/dotlottie-react"
-import Image from "next/image"
 
 export function HeroSection() {
   return (
@@ -44,6 +43,7 @@ export function HeroSection() {
                 View on Github
               </Button>
             </Link>
+            {/*
             <Button
               size="lg"
               variant="outline"
@@ -60,6 +60,7 @@ export function HeroSection() {
               <Download className="w-5 h-5 mr-2" />
               Download Linterra.yml
             </Button>
+            */}
           </div>
         </motion.div>
 
