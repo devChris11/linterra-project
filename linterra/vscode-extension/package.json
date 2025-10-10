@@ -1,0 +1,67 @@
+{
+  "name": "linterra",
+  "displayName": "Linterra - Design System Linter",
+  "description": "Catch design system violations while coding",
+  "version": "0.1.0",
+  "publisher": "devChris11",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Linters"
+  ],
+  "activationEvents": [
+    "onLanguage:typescriptreact",
+    "onLanguage:javascriptreact"
+  ],
+  "main": "./out/vscode-extension/src/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Linterra",
+      "properties": {
+        "linterra.runOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Run Linterra checks automatically when a file is saved"
+        },
+        "linterra.runOnOpen": {
+          "type": "boolean",
+          "default": true,
+          "description": "Run Linterra checks automatically when a file is opened"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "linterra.checkFile",
+        "title": "Linterra: Check Current File"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "@vscode/vsce": "^2.19.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {},
+  "keywords": [
+    "linter",
+    "design system",
+    "react",
+    "nextjs",
+    "accessibility",
+    "a11y"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devChris11/linterra"
+  },
+  "license": "MIT"
+}

@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Linterra - Design System Linter
 
-## Getting Started
+A modern, automated design system linter that catches violations while you code. Built for React, Next.js, and TypeScript projects.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Automated Checking**: Runs on every pull request automatically
+- **Design System + Accessibility**: Enforces color contrast ratios and semantic HTML for WCAG compliance
+- **Zero Configuration**: Add one GitHub Action file to your repo
+- **Interactive Demo**: Test your components in our live demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Quick Start
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run the development server: `npm run dev`
+4. Open [http://localhost:3000](http://localhost:3000) to see the demo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## VS Code Extension
 
-## Learn More
+The project includes a VS Code extension for real-time linting:
 
-To learn more about Next.js, take a look at the following resources:
+1. Navigate to `vscode-extension/`
+2. Install dependencies: `npm install`
+3. Compile: `npm run compile`
+4. Package: `npm run package`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Linter Rules
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Alt Text**: Ensures images have proper alt attributes
+- **Colors**: Detects hardcoded colors and suggests design tokens
+- **Contrast**: Validates color contrast ratios for accessibility
+- **Form Labels**: Ensures form inputs have proper labels
+- **Spacing**: Detects inconsistent spacing values
 
-## Deploy on Vercel
+## Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Frontend**: Next.js 14, React 18, TypeScript
+- **Styling**: Tailwind CSS, Framer Motion
+- **Linting**: Custom AST-based linter with Babel parser
+- **Editor**: Monaco Editor for code editing
+- **Animations**: Lottie animations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests and linting
+5. Submit a pull request
+
+## License
+
+MIT License - see LICENSE file for details
