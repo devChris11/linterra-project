@@ -18,7 +18,7 @@ export function ResultsPanel({ results }: ResultsPanelProps) {
           <div>
             <h3 className="text-xl font-semibold text-card-foreground mb-2">No Results Yet</h3>
             <p className="text-muted-foreground">
-              Write some code in the editor and click "Check Code" to see the linting results.
+              Write some code in the editor and click &quot;Check Code&quot; to see the linting results.
             </p>
           </div>
         </CardContent>
